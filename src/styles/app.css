@@ -1,0 +1,9 @@
+/* common */
+body {
+  font-family: Helvetica, Arial, tahoma, sans-serif;
+}
+
+.container {
+  font-size: 14px;
+  text-align: center;
+}

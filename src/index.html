@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>HomePage</title>
+      <meta name="description" content="Your seo description" />
+      <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+      <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+      <link rel="stylesheet" href="./styles/app.css" />
+  </head>
+  <body ng-app="JustinApp">
+    <!-- ~ .app -->
+    <div ng-view class="container"></div>
+
+    <!--templates start-->
+    <!-- 这边有点ugly，可以拆分到不同的文件去维护，这个自己看吧 -->
+    <script type="text/ng-template" id="tpls/welcome.html">
+      <div class="app-welcome">
+        <section class="page-name">Current page name is ( {{ pageName }} )</section>
+        <section class="link"><a href="#/list/zh_CN">Go Book List</a></section>
+      </div>
+    </script>
+
+    <script type="text/ng-template" id="tpls/bookList.html">
+      <div class="app-list-wrapper" ng-init="initBookList()">
+        <section class="page-name">Current page name is ( {{ pageName }} )</section>
+      </div>
+    </script>
+
+    <script type="text/ng-template" id="tpls/bookDetail.html">
+      <div class="app-detail-wrapper">
+        <section class="page-name">Current page name is ( {{ pageName }} )</section>
+      </div>
+    </script>
+    <!--templates end-->
+
+    <!-- bower:js -->
+    <script src="../bower/angular/angular.js"></script>
+    <script src="../bower/angular-route/angular-route.js"></script>
+    <script src="../bower/angular-translate/angular-translate.js"></script>
+    <!-- endbower -->
+
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="./scripts/app.js"></script>
+    <script src="./scripts/config.js"></script>
+    <!-- resquest data -->
+    <script src="./scripts/data.js"></script>
+    <script src="./scripts/i18n/zh_CN.js"></script>
+    <script src="./scripts/i18n/en_US.js"></script>
+
+    <script src="./scripts/controllers/WelcomeCtrl.js"></script>
+    <script src="./scripts/controllers/BookListCtrl.js"></script>
+    <script src="./scripts/controllers/BookDetailCtrl.js"></script>
+    <!-- endbuild -->
+
+  </body>
+</html>
